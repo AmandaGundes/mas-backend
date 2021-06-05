@@ -14,9 +14,6 @@ class CourseUnit {
   @PrimaryColumn()
   readonly id: string;
 
-  @OneToMany(() => Activity, activity => activity.course_unit)
-  activities: Activity[];
-
   @Column()
   name: string;
 
@@ -25,6 +22,9 @@ class CourseUnit {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToMany(() => Activity, activity => activity.course_unit)
+  activities: Activity[];
 }
 
 export { CourseUnit };

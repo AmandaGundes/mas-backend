@@ -4,6 +4,7 @@ import { CourseUnit } from "./CourseUnit";
 
 @Entity("activities")
 class Activity {
+
   constructor() {
     if (!this.id) {
       this.id = uuid();
@@ -13,13 +14,10 @@ class Activity {
   @PrimaryColumn()
   readonly id: string;
 
-  @ManyToOne(() => CourseUnit, course_unit => course_unit.activities)
-  course_unit: CourseUnit;
-
   @Column()
   name: string;
 
-  @CreateDateColumn()
+  @Column()
   activity_date: Date;
 
   @Column()
@@ -28,6 +26,8 @@ class Activity {
   @CreateDateColumn()
   created_at: Date;
 
+  @ManyToOne(() => CourseUnit, course_unit => course_unit.activities)
+  course_unit: CourseUnit;
 }
 
 export { Activity };
