@@ -10,7 +10,7 @@ class CourseUnitController {
 
     const courseUnit = await createCourseUnit.execute(courseUnitData);
 
-    return response.json(courseUnit);
+    return response.json(courseUnit)
   }
 
   async show(request: Request, response: Response) {

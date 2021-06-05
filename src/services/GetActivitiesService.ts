@@ -7,10 +7,11 @@ interface UserId {
 
 class GetActivitiesService {
   public async execute({ id }: UserId) {
+    console.log("Id do usuário da atividade: " + id);
 
     const activitiesRepository = getRepository(Activity);
 
-    const activities = await activitiesRepository.find();
+    const activities = await activitiesRepository.find({ relations: ["course_unit"] });
 
     if (!activities) {
       return {
