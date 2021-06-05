@@ -21,6 +21,10 @@ export class CreateActivities1619903470131 implements MigrationInterface {
                         type: "timestamp"
                     },
                     {
+                        name: "grade",
+                        type: "decimal"
+                    },
+                    {
                         name: "course_unit_id",
                         type: "varchar"
                     },
@@ -43,7 +47,6 @@ export class CreateActivities1619903470131 implements MigrationInterface {
     };
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("activities");
     }
 
 }
