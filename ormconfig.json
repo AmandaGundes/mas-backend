@@ -13,5 +13,6 @@
   ],
   "cli": {
     "migrationsDir": "./src/databases/migrations"
-  }
+  },
+  "synchronize": true
 }
