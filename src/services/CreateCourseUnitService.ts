@@ -16,7 +16,6 @@ class CreateCourseUnitService {
       name,
       description
     });
-
     await courseUnitRepository.save(courseUnit);
 
     return courseUnit;

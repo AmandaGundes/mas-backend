@@ -2,7 +2,7 @@ import { getRepository } from "typeorm";
 import { Activity } from "../model/Activity";
 
 interface UserId {
-  id?: string
+  id?: string;
 }
 
 class GetActivitiesService {

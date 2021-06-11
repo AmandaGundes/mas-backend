@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinTable, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { CourseUnit } from "./CourseUnit";
 
@@ -31,6 +31,7 @@ class Activity {
 
   @ManyToOne(() => CourseUnit, course_unit => course_unit.activities)
   @JoinTable()
+  @JoinColumn({ name: 'course_unit_id', referencedColumnName: 'id' })
   course_unit: CourseUnit;
 }
 
